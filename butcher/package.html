@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" ">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="alternate icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/amazeui.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/amazeui.min.js"></script>
+    <title>包装</title>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="title">
+                <img src="images/package-blue.png" alt="" />
+                <h1>
+                    <p>包装</p>
+                    <span>PACKAGE</span>
+                </h1>
+            </div>
+            <div class="control">
+                <ul>
+                    <li>
+                        <a href="print.html" class="am-btn" data-fun="4">
+                            <img src="images/print.png" alt="" />
+                        </a>
+                        <p>F8</p>
+                    </li>
+                    <li>
+                        <a href="javsscript:;" class="am-btn" data-fun="2">
+                            <img src="images/set.png" alt="" />
+                        </a>
+                        <p>F9</p>
+                    </li>
+                    <li>
+                        <a href="javsscript:;" class="am-btn" data-fun="3">
+                            <img src="images/quit.png" alt="" />
+                        </a>
+                        <p>F4</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="username"><span>操作员：易飞</span></div>
+    </header>
+    <div class="fun_bd">
+        <div class="package-control">
+            <div class="list">
+                <a href="javsscript:;" class="am-btn"><span>后腿肉后腿肉后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+                <a href="javsscript:;" class="am-btn"><span>后腿肉</span></a>
+            </div>
+            <div class="function">
+                <div class="display">
+                    <div class="led">
+                        <p>1234567890</p>
+                        <span class="error hidden">error</span>
+                    </div>
+                    <div class="record">
+                        <ul>
+                            <li>
+                                <label>规格</label><input type="text" readonly="" value="后腿肉" />
+                            </li>
+                            <li>
+                                <label>重量</label><input type="text" readonly="" value="300g" />
+                            </li>
+                            <li>
+                                <label>挂钩号</label><input type="text" readonly="" value="G312315" />
+                            </li>
+                            <li>
+                                <label>身份码</label><input type="text" readonly="" value="3912-123" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        请放称重！
+                    </div>
+                </div>
+                <div class="submit">
+                    <a href="javascript:;" class="am-btn">提交<img src="images/submit.png" alt="" /></a>
+                </div>
+                <div class="reset">
+                    <a href="javascript:;" class="am-btn">重置</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    $(window).on('load',function() {
+
+    });
+    $(function(){
+        console.log();
+        lastNum();
+        weigh();
+    });
+
+    // 菜单排列
+    function lastNum(){
+        var a = $('.package-control .list a').length;
+        var j = a % 6;
+        var n;
+        if(j == 0){
+            n = 0;
+        }else{
+            n = 6 - j;
+        };
+        for (var i = 1; i <= n; i++) {
+            $('.package-control .list').append('<div class="lastNum"></div>');
+        }
+    }
+
+    // 超出计量处理
+    function weigh(){
+        var num = $('.led p').text();
+        if( num.toString().length > 9 ){
+            $('.led p').text('0');
+            $('.led .error').removeClass('hidden');
+        }
+    }
+
+
+</script>
+</body>
+
+</html>
